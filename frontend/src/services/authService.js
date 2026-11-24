@@ -18,10 +18,7 @@ const logout = async () => {
 };
 
 const register = async (userData) => {
-    const isFormData = userData instanceof FormData;
-    const response = await api.post("/users/register", userData, {
-        headers: isFormData ? { "Content-Type": "multipart/form-data" } : {}
-    });
+    const response = await api.post("/users/register", userData);
     return response.data;
 };
 
@@ -31,10 +28,7 @@ const getProfile = async () => {
 };
 
 const updateProfile = async (profileData) => {
-    const isFormData = profileData instanceof FormData;
-    const response = await api.put("/users/profile", profileData, {
-        headers: isFormData ? { "Content-Type": "multipart/form-data" } : {}
-    });
+    const response = await api.put("/users/profile", profileData);
     return response.data;
 };
 

@@ -41,21 +41,25 @@ const getFolderByField = (fieldname) => {
 // ==========================================
 
 const fileFilter = (req, file, cb) => {
-    const allowedTypes = [
+    const allowedMimeTypes = [
         "image/jpeg",
         "image/jpg",
         "image/png",
         "image/webp"
     ];
+    const allowedExtensions = [".jpg", ".jpeg", ".png", ".webp"];
+    const ext = path.extname(file.originalname || "").toLowerCase();
 
-    if (allowedTypes.includes(file.mimetype)) {
-        cb(null, true);
-    } else {
-        cb(
-            new Error("Only JPG, JPEG, PNG and WEBP images are allowed"),
-            false
+    // Explicitly reject non-image files such as ZIP, EXE, PDF, etc.
+    if (!allowedExtensions.includes(ext) || !allowedMimeTypes.includes(file.mimetype)) {
+        const error = new Error(
+            `Unsupported file type (${ext || file.mimetype || "unknown"}). Only JPG, JPEG, PNG, and WEBP image files are allowed. ZIP, PDF, EXE, and executable files are strictly prohibited.`
         );
+        error.statusCode = 400;
+        return cb(error, false);
     }
+
+    cb(null, true);
 };
 
 // ==========================================

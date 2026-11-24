@@ -1,10 +1,7 @@
 import api from "./api";
 
 export const createBooking = async (bookingData) => {
-    const isFormData = bookingData instanceof FormData;
-    const response = await api.post("/bookings", bookingData, {
-        headers: isFormData ? { "Content-Type": "multipart/form-data" } : {}
-    });
+    const response = await api.post("/bookings", bookingData);
     return response.data;
 };
 

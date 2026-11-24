@@ -70,15 +70,25 @@ const Register = () => {
     };
 
     const validateImageFile = (file, label) => {
-        const allowedTypes = [
+        if (!file) return false;
+
+        const allowedMimeTypes = [
             "image/jpeg",
             "image/jpg",
             "image/png",
             "image/webp"
         ];
+        const allowedExtensions = [".jpg", ".jpeg", ".png", ".webp"];
+        const fileName = file.name || "";
+        const ext = fileName.includes(".")
+            ? `.${fileName.split(".").pop().toLowerCase()}`
+            : "";
 
-        if (!allowedTypes.includes(file.mimetype || file.type)) {
-            setError(`Only JPG, JPEG, PNG, and WEBP formats are supported for ${label}.`);
+        // Strictly reject ZIP, EXE, PDF, installer, and non-image archives
+        if (!allowedExtensions.includes(ext) || (file.type && !allowedMimeTypes.includes(file.type))) {
+            setError(
+                `Only JPG, JPEG, PNG, and WEBP image files are allowed for ${label}. ZIP, EXE, PDF, and archive files are strictly prohibited.`
+            );
             return false;
         }
 

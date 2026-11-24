@@ -16,18 +16,12 @@ export const getBikeById = async (id) => {
 };
 
 export const createBike = async (bikeData) => {
-    const isFormData = bikeData instanceof FormData;
-    const response = await api.post("/bikes", bikeData, {
-        headers: isFormData ? { "Content-Type": "multipart/form-data" } : {}
-    });
+    const response = await api.post("/bikes", bikeData);
     return response.data;
 };
 
 export const updateBike = async (id, bikeData) => {
-    const isFormData = bikeData instanceof FormData;
-    const response = await api.put(`/bikes/${id}`, bikeData, {
-        headers: isFormData ? { "Content-Type": "multipart/form-data" } : {}
-    });
+    const response = await api.put(`/bikes/${id}`, bikeData);
     return response.data;
 };
 

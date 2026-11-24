@@ -36,13 +36,20 @@ const allowedOrigins = [
 
 // Add frontend URL if provided
 if (process.env.FRONTEND_URL) {
-    allowedOrigins.push(process.env.FRONTEND_URL.trim().replace(/\/$/, ""));
+    process.env.FRONTEND_URL.split(",")
+        .map((origin) => origin.trim().replace(/\/+$/, ""))
+        .filter(Boolean)
+        .forEach((origin) => {
+            if (!allowedOrigins.includes(origin)) {
+                allowedOrigins.push(origin);
+            }
+        });
 }
 
 // Support comma-separated additional origins in CORS_ORIGIN
 if (process.env.CORS_ORIGIN) {
     process.env.CORS_ORIGIN.split(",")
-        .map((origin) => origin.trim().replace(/\/$/, ""))
+        .map((origin) => origin.trim().replace(/\/+$/, ""))
         .filter(Boolean)
         .forEach((origin) => {
             if (!allowedOrigins.includes(origin)) {
@@ -58,7 +65,7 @@ const corsOptions = {
             return callback(null, true);
         }
 
-        const normalizedOrigin = origin.replace(/\/$/, "");
+        const normalizedOrigin = origin.trim().replace(/\/+$/, "");
 
         // Check exact match in whitelist
         if (allowedOrigins.includes(normalizedOrigin)) {
@@ -75,12 +82,12 @@ const corsOptions = {
             return callback(null, true);
         }
 
-        console.warn(`[CORS] Blocked request from origin: ${origin}`);
-        callback(new Error(`Origin ${origin} not allowed by CORS policy`));
+        console.warn(`[CORS] Blocked request from unauthorized origin: ${origin}`);
+        callback(null, false);
     },
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"]
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"]
 };
 
 app.use(cors(corsOptions));
