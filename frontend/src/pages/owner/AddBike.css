@@ -1,0 +1,456 @@
+.add-bike-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.add-bike-page-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px 28px;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-back-header {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-back-header:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.add-bike-page-header h1 {
+    margin: 4px 0 4px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.add-bike-page-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.approval-info-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+}
+
+.approval-info-banner .info-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.approval-info-banner strong {
+    font-size: 14px;
+}
+
+.approval-info-banner p {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #1e3a8a;
+    line-height: 1.5;
+}
+
+.approval-info-banner code {
+    background: #dbeafe;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.form-alert-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-alert-banner.error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+}
+
+.form-alert-banner.success {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+}
+
+/* ===================================================
+   FORM BLOCKS
+   =================================================== */
+
+.add-bike-form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-card-block {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+}
+
+.form-card-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.card-title-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-title-icon.blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.card-title-icon.orange {
+    background: #fff7ed;
+    color: #f97316;
+}
+
+.card-title-icon.purple {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.form-card-title h3 {
+    margin: 0 0 2px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.form-card-title p {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.form-inputs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-input-field.full {
+    grid-column: span 2;
+}
+
+.form-input-field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-input-field label span {
+    color: #ef4444;
+}
+
+.form-input-field input,
+.form-input-field select {
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #0f172a;
+    background: #f8fafc;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.form-input-field input:focus,
+.form-input-field select:focus {
+    background: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.input-affix {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-affix .affix-symbol {
+    position: absolute;
+    left: 12px;
+    color: #64748b;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.input-affix input {
+    width: 100%;
+    padding-left: 36px;
+}
+
+.input-hint {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+/* ===================================================
+   FILE DROPZONE
+   =================================================== */
+
+.file-dropzone {
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 36px 20px;
+    text-align: center;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.file-dropzone:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.dropzone-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.file-dropzone h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.file-dropzone p {
+    margin: 0 0 8px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.dropzone-hint {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.image-preview-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.preview-img-box {
+    width: 120px;
+    height: 90px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background: #e2e8f0;
+    flex-shrink: 0;
+}
+
+.preview-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-remove-preview {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(15, 23, 42, 0.75);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-remove-preview:hover {
+    background: #ef4444;
+}
+
+.preview-info strong {
+    display: block;
+    font-size: 14px;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+
+.preview-info p {
+    margin: 0 0 10px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.btn-change-img {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-change-img:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+/* ===================================================
+   BOTTOM ACTIONS
+   =================================================== */
+
+.form-bottom-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-cancel {
+    background: #ffffff;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background: #f1f5f9;
+}
+
+.btn-submit-bike {
+    background: #f97316;
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+    transition: all 0.2s ease;
+}
+
+.btn-submit-bike:hover {
+    background: #ea580c;
+    transform: translateY(-2px);
+}
+
+.btn-submit-bike:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.add-bike-loading-state {
+    padding: 80px 20px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+@media (max-width: 640px) {
+    .form-inputs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-input-field.full {
+        grid-column: span 1;
+    }
+
+    .image-preview-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-bottom-actions {
+        flex-direction: column-reverse;
+    }
+
+    .btn-cancel, .btn-submit-bike {
+        width: 100%;
+        justify-content: center;
+    }
+}

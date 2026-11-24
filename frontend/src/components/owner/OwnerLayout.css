@@ -1,0 +1,503 @@
+/* ===================================================
+   OWNER LAYOUT STYLES
+   =================================================== */
+
+:root {
+    --owner-navy: #0f172a;
+    --owner-navy-light: #1e293b;
+    --owner-blue: #2563eb;
+    --owner-orange: #f97316;
+    --owner-bg: #f8fafc;
+    --owner-card: #ffffff;
+    --owner-text: #1e293b;
+    --owner-muted: #64748b;
+    --owner-border: #e2e8f0;
+}
+
+.owner-app-container {
+    display: flex;
+    min-height: 100vh;
+    background: #f8fafc;
+    color: #1e293b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* ===================================================
+   MOBILE TOP BAR
+   =================================================== */
+
+.owner-mobile-topbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 900;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.owner-menu-toggle {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.owner-menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.owner-mobile-brand {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.owner-mobile-brand .owner-logo-icon {
+    font-size: 20px;
+    margin-right: 2px;
+}
+
+.owner-mobile-brand .owner-logo-moto {
+    color: #ffffff;
+}
+
+.owner-mobile-brand .owner-logo-rent {
+    color: #f97316;
+}
+
+.owner-panel-tag {
+    font-size: 10px;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-weight: 700;
+    margin-left: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.owner-mobile-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.owner-avatar-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.owner-sidebar-backdrop {
+    display: none;
+}
+
+/* ===================================================
+   SIDEBAR
+   =================================================== */
+
+.owner-sidebar-panel {
+    width: 270px;
+    background: #0f172a;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.owner-sidebar-brand-header {
+    padding: 20px 20px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.owner-brand-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.owner-brand-symbol {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+}
+
+.owner-brand-title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+.owner-brand-title .moto {
+    color: #ffffff;
+}
+
+.owner-brand-title .rent {
+    color: #f97316;
+}
+
+.owner-panel-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.owner-close-sidebar-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.owner-close-sidebar-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* PROFILE SUMMARY IN SIDEBAR */
+.owner-profile-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    margin: 14px 14px 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.owner-profile-summary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.owner-profile-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.owner-profile-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.owner-profile-text strong {
+    display: block;
+    font-size: 13px;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.owner-profile-text span {
+    display: block;
+    font-size: 11px;
+    color: #94a3b8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.owner-profile-arrow {
+    color: #64748b;
+}
+
+/* NAVIGATION ITEMS */
+.owner-nav-list {
+    flex: 1;
+    padding: 8px 12px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.owner-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+.owner-nav-link-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.owner-nav-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.owner-nav-link.active {
+    color: #ffffff;
+    background: #2563eb;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.owner-nav-badge {
+    background: #f97316;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 9999px;
+    box-shadow: 0 2px 6px rgba(249, 115, 22, 0.4);
+}
+
+/* SIDEBAR FOOTER */
+.owner-sidebar-footer {
+    padding: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.owner-sidebar-logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f87171;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.owner-sidebar-logout-btn:hover {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+/* ===================================================
+   MAIN WRAPPER & TOP BAR
+   =================================================== */
+
+.owner-main-wrapper {
+    flex: 1;
+    margin-left: 270px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f8fafc;
+}
+
+.owner-desktop-topbar {
+    height: 70px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.owner-topbar-context {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.owner-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.owner-topbar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+}
+
+.owner-topbar-user:hover {
+    background: #f1f5f9;
+}
+
+.owner-topbar-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e2e8f0;
+}
+
+.owner-topbar-name strong {
+    display: block;
+    font-size: 13px;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.owner-topbar-name small {
+    display: block;
+    font-size: 11px;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.owner-topbar-logout {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.owner-topbar-logout:hover {
+    background: #fecaca;
+}
+
+/* ===================================================
+   PAGE BODY
+   =================================================== */
+
+.owner-page-body {
+    flex: 1;
+    padding: 32px;
+    max-width: 1400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN
+   =================================================== */
+
+@media (max-width: 992px) {
+    .owner-mobile-topbar {
+        display: flex;
+    }
+
+    .owner-desktop-topbar {
+        display: none;
+    }
+
+    .owner-sidebar-panel {
+        transform: translateX(-100%);
+    }
+
+    .owner-sidebar-panel.open {
+        transform: translateX(0);
+    }
+
+    .owner-close-sidebar-btn {
+        display: flex;
+    }
+
+    .owner-sidebar-backdrop {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(3px);
+        z-index: 950;
+    }
+
+    .owner-main-wrapper {
+        margin-left: 0;
+        padding-top: 60px;
+    }
+
+    .owner-page-body {
+        padding: 20px 16px;
+    }
+}

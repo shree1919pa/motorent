@@ -1,0 +1,113 @@
+/* ===================================================
+   ADMIN BIKE MANAGEMENT STYLES
+   MotoRent Admin Design System
+=================================================== */
+
+.admin-bikes-page {
+    animation: fadeInPage 0.25s ease-out;
+}
+
+.bikes-page-header {
+    margin-bottom: 24px;
+}
+
+.bikes-header-content h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.5px;
+}
+
+.bikes-header-content p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* 5 SUMMARY CARDS */
+.bikes-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.bikes-summary-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.bikes-summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    border-color: #cbd5e1;
+}
+
+.bikes-summary-card.active-tab {
+    border-color: #2563eb;
+    background: #f8fafc;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.bike-metric-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.bike-metric-icon.total { background: #eff6ff; color: #2563eb; }
+.bike-metric-icon.approved { background: #f0fdf4; color: #16a34a; }
+.bike-metric-icon.blocked { background: #fee2e2; color: #dc2626; }
+.bike-metric-icon.pending { background: #fff7ed; color: #ea580c; }
+.bike-metric-icon.rejected { background: #f1f5f9; color: #64748b; }
+
+.bike-table-thumb {
+    width: 54px;
+    height: 42px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+}
+
+.bike-table-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bike-table-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+@media (max-width: 1200px) {
+    .bikes-summary-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .bikes-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}

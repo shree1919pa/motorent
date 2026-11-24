@@ -1,0 +1,860 @@
+.owner-bookings-page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.bookings-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px 28px;
+    border: 1px solid #e2e8f0;
+}
+
+.bookings-page-header h1 {
+    margin: 4px 0 4px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.bookings-page-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.bookings-summary-badge {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.bookings-alert {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.bookings-alert.success {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+}
+
+.bookings-alert.error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+/* ===================================================
+   TOOLBAR & TABS
+   =================================================== */
+
+.bookings-toolbar-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 14px 20px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.bookings-tabs-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.booking-tab-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 30px;
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #475569;
+    transition: all 0.18s ease;
+}
+
+.booking-tab-pill:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+.tab-pill-label {
+    line-height: 1;
+}
+
+.tab-pill-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #e2e8f0;
+    color: #334155;
+    transition: all 0.18s ease;
+}
+
+/* Tab Status Color Themes (Active States) */
+.booking-tab-pill.all.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.28);
+}
+.booking-tab-pill.all.active .tab-pill-count {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.booking-tab-pill.pending.active {
+    background: #f59e0b;
+    border-color: #f59e0b;
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(245, 158, 11, 0.28);
+}
+.booking-tab-pill.pending.active .tab-pill-count {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.booking-tab-pill.confirmed.active {
+    background: #16a34a;
+    border-color: #16a34a;
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(22, 163, 74, 0.28);
+}
+.booking-tab-pill.confirmed.active .tab-pill-count {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.booking-tab-pill.completed.active {
+    background: #0284c7;
+    border-color: #0284c7;
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.28);
+}
+.booking-tab-pill.completed.active .tab-pill-count {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.booking-tab-pill.cancelled.active {
+    background: #dc2626;
+    border-color: #dc2626;
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(220, 38, 38, 0.28);
+}
+.booking-tab-pill.cancelled.active .tab-pill-count {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.booking-tab-pill.rejected.active {
+    background: #991b1b;
+    border-color: #991b1b;
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(153, 27, 27, 0.28);
+}
+.booking-tab-pill.rejected.active .tab-pill-count {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.bookings-search-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 280px;
+}
+
+.bookings-search-field svg {
+    position: absolute;
+    left: 12px;
+    color: #94a3b8;
+}
+
+.bookings-search-field input {
+    width: 100%;
+    padding: 8px 12px 8px 36px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    background: #f8fafc;
+}
+
+.bookings-search-field input:focus {
+    border-color: #2563eb;
+    background: #ffffff;
+}
+
+/* ===================================================
+   TABLE
+   =================================================== */
+
+.bookings-table-container {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+
+.bookings-table th {
+    background: #f8fafc;
+    color: #475569;
+    font-weight: 700;
+    padding: 14px 18px;
+    border-bottom: 1px solid #e2e8f0;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.bookings-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.bookings-table tr:hover td {
+    background: #fafafa;
+}
+
+.table-bike-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.table-bike-img {
+    width: 44px;
+    height: 36px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.table-bike-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.table-bike-cell strong {
+    display: block;
+    color: #0f172a;
+    font-size: 13px;
+}
+
+.table-bike-cell small {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+}
+
+.table-customer-cell strong {
+    display: block;
+    color: #0f172a;
+}
+
+.table-customer-cell small {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+}
+
+.table-date-cell span {
+    display: block;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.table-date-cell small {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.table-days-pill {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.table-amount-val {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.table-status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.status-confirmed {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.status-pending {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.status-completed {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.status-rejected {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.status-cancelled {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.table-created-date {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.table-actions-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-table-view {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-table-view:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.btn-table-complete {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-table-complete:hover {
+    background: #dbeafe;
+}
+
+.bookings-loading-state, .bookings-empty-state {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.empty-cal-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+}
+
+.bookings-empty-state h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.bookings-empty-state p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* ===================================================
+   MODAL
+   =================================================== */
+
+.booking-detail-modal {
+    background: #ffffff;
+    border-radius: 16px;
+    max-width: 520px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+}
+
+.modal-status-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8fafc;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.modal-info-section {
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.modal-info-section h4 {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modal-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.modal-info-grid div span {
+    display: block;
+    font-size: 11px;
+    color: #64748b;
+}
+
+.modal-info-grid div strong {
+    font-size: 13px;
+    color: #0f172a;
+}
+
+.modal-notes {
+    margin: 8px 0 0;
+    font-size: 12px;
+    background: #f8fafc;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #475569;
+}
+
+.modal-footer-btns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-modal-complete {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ===================================================
+   FEATURE 7 & 10: OWNER BOOKINGS EXTENSIONS
+   =================================================== */
+
+.table-amount-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.table-payment-pill {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.table-payment-pill.verified {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.table-payment-pill.submitted {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+.table-payment-pill.refund-pending {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.table-payment-pill.refunded {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.table-payment-pill.rejected {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.table-status-badge.status-expired {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.btn-table-refund {
+    background: #fffbeb;
+    color: #b45309;
+    border: 1px solid #fde68a;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11.5px;
+    font-weight: 700;
+    transition: all 0.15s ease;
+}
+
+.btn-table-refund:hover {
+    background: #fef3c7;
+}
+
+.cancel-summary-section {
+    background: #fffbeb;
+    border: 1px solid #fed7aa;
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cancel-section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.cancel-header-icon {
+    color: #ea580c;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.cancel-section-header h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #9a3412;
+}
+
+.cancel-section-header p {
+    margin: 0;
+    font-size: 12.5px;
+    color: #7c2d12;
+}
+
+.cancel-details-table-card {
+    background: #ffffff;
+    border: 1px solid #fed7aa;
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+.cancel-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.cancel-details-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cancel-details-grid span {
+    font-size: 11.5px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.cancel-details-grid strong {
+    font-size: 13.5px;
+    color: #0f172a;
+}
+
+.cancel-financial-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+}
+
+.cancel-overview-card {
+    background: #ffffff;
+    border: 1px solid #fed7aa;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cancel-overview-card span {
+    font-size: 11.5px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.cancel-overview-card strong {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.refund-status-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.refund-status-pill.settled {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.refund-status-pill.pending {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.refund-settled-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+
+.settled-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: #166534;
+}
+
+.settled-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+.settled-details-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.settled-details-grid span {
+    font-size: 11.5px;
+    color: #475569;
+}
+
+.settled-details-grid strong {
+    font-size: 13.5px;
+    color: #0f172a;
+}
+
+.refund-settlement-form {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.refund-settlement-form h5 {
+    margin: 0 0 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.settlement-hint {
+    margin: 0 0 14px;
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.45;
+}
+
+.settlement-fields-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.settlement-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.settlement-input-group label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #334155;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settlement-input-group label small {
+    font-size: 11px;
+    color: #d97706;
+    font-weight: 600;
+}
+
+.settlement-input-group input {
+    padding: 9px 12px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13.5px;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.settlement-input-group input:focus {
+    border-color: #2563eb;
+}
+
+.settlement-calculated-box {
+    background: #f8fafc;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 8px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.settlement-calculated-box span {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.calc-refund-amount {
+    font-size: 18px;
+    font-weight: 800;
+    color: #16a34a;
+}
+
+.btn-modal-refund-action {
+    background: #16a34a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 18px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.15s ease;
+}
+
+.btn-modal-refund-action:hover {
+    background: #15803d;
+}
+
+.btn-modal-refund-action:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

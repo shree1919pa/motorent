@@ -1,0 +1,22 @@
+# Node dependencies
+node_modules/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Local uploads
+uploads/bikes/*
+!uploads/bikes/.gitkeep
+uploads/licenses/*
+!uploads/licenses/.gitkeep
+uploads/qrcodes/*
+!uploads/qrcodes/.gitkeep
+uploads/payments/*
+!uploads/payments/.gitkeep
+uploads/profiles/*
+!uploads/profiles/.gitkeep
+
+# Logs
+*.log
